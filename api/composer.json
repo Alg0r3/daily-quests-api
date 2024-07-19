@@ -1,8 +1,10 @@
 {
+    "name": "alg0r3/daily-quests-api",
+    "description": "Backend implementation for the application Daily Quests.",
     "type": "project",
     "license": "MIT",
     "require": {
-        "php": ">=8.2",
+        "php": ">=8.3",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "api-platform/core": "^3.2",
@@ -31,6 +33,8 @@
     },
     "require-dev": {
         "api-platform/schema-generator": "^5.0",
+        "friendsofphp/php-cs-fixer": "^3.59",
+        "phpstan/phpstan": "^1.11",
         "symfony/browser-kit": "6.4.*",
         "symfony/css-selector": "6.4.*",
         "symfony/debug-bundle": "6.4.*",
