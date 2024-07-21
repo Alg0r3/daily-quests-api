@@ -1,0 +1,6 @@
+#!/bin/bash
+
+CONTAINER_NAME="php"
+
+# Execute the command passed as arg inside the named Docker container
+docker compose exec -it $CONTAINER_NAME "$@"

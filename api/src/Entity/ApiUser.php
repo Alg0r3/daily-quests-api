@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\Id;
 use Symfony\Bridge\Doctrine\Types\UuidType;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Uid\Uuid;
 
@@ -14,14 +15,14 @@ use Symfony\Component\Uid\Uuid;
  * Represent a user of this API, mostly another application.
  */
 #[Entity]
-class ApiUser implements UserInterface
+class ApiUser implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[Id]
     #[Column(type: UuidType::NAME, unique: true)]
     private Uuid $id;
 
     #[Column(type: Types::STRING, unique: true)]
-    private string $identifier;
+    private string $userIdentifier;
 
     #[Column(type: Types::STRING)]
     private string $password;
@@ -53,12 +54,12 @@ class ApiUser implements UserInterface
 
     public function getUserIdentifier(): string
     {
-        return $this->identifier;
+        return $this->userIdentifier;
     }
 
     public function setUserIdentifier(string $userIdentifier): ApiUser
     {
-        $this->identifier = $userIdentifier;
+        $this->userIdentifier = $userIdentifier;
 
         return $this;
     }
