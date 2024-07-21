@@ -21,8 +21,10 @@ lint: validate check analyze ## Run all linting commands.
 
 .PHONY: clear
 clean: ## Clear Symfony and PHP-CS-Fixer cache.
-	@sudo rm -rf ./php-cs-fixer.cache
+	@sudo rm -rf ../.php-cs-fixer.cache
+	@sudo rm -rf ./.php-cs-fixer.cache
 	@sudo rm -rf ./var
+	@php bin/console cache:pool:clear cache.global_clearer
 
 .PHONY: help
 help: ## Show this help message.

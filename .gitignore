@@ -2,5 +2,7 @@
 /helm/api-platform/charts/*
 !/helm/api-platform/charts/.gitignore
 
-# IDE PHPStorm
+###> phpstorm ###
 /.idea
+/.php-cs-fixer.cache
+###< phpstorm ###
