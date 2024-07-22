@@ -1,0 +1,15 @@
+default:
+  formatters:
+    progress: ~
+  suites:
+    default:
+      contexts:
+        - App\Tests\Behat\Context\AuthenticationContext: ~
+      paths:
+        - "%paths.base%/tests/Behat/Feature"
+  extensions:
+    FriendsOfBehat\SymfonyExtension:
+      kernel:
+        class: ~
+        environment: test
+      bootstrap: tests/bootstrap.php

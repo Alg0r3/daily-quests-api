@@ -35,12 +35,19 @@ indent_size = 4
 trim_trailing_whitespace = false
 indent_size = 2
 
+[*.{yaml,yml}.dist]
+trim_trailing_whitespace = false
+indent_size = 2
+
 [.gitmodules]
 indent_style = tab
 
 [.php_cs{,.dist}]
 indent_style = space
 indent_size = 4
+
+[*.feature]
+indent_size = 2
 
 [composer.json]
 indent_size = 4
